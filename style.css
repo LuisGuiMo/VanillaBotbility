@@ -1,7 +1,111 @@
+/* Add a black background color to the top navigation */
 body {
-    font-family: Verdana;
-    font-size: 2em;
+    background-color: black;
+    /* Fondo negro para toda la página */
+    margin: 0;
+    /* Eliminar márgenes por defecto */
+    padding: 0;
+    /* Eliminar padding por defecto */
+}
+
+.container {
+    padding: 20px 150px;
+    /* Padding global de la página */
+    box-sizing: border-box;
+    /* Incluir padding en el tamaño total del contenedor */
+    height: calc(100vh - 100px);
+    /* Altura de la caja exterior */
+}
+
+.head1 {
+    overflow: hidden;
+    border: 6px solid white;
+    /* Borde blanco para la barra de navegación */
+    background-color: black;
+    /* Añadir color de fondo negro */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Style the links inside the navigation bar */
+.head1 a,
+.head1 img,
+.head1 .nav-text,
+.head1 .nav-button {
+    float: left;
+    color: black;
     text-align: center;
-    font-family: 'kiwi-marlin';
-    background-color: teal;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 35px;
+    font-family: monospace;
+}
+
+.head1 .nav-text {
+    flex-grow: 1;
+    text-align: center;
+    color: white;
+    /* Color del texto central */
+    margin: 0;
+    /* Eliminar márgenes */
+}
+
+.head1 .nav-button {
+    float: right;
+    background: none;
+    border: none;
+    color: white;
+    /* Color del icono del botón */
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.head1 .nav-button:hover {
+    color: grey;
+    /* Cambiar color al pasar el ratón */
+}
+
+.content {
+    display: flex;
+    margin-top: 20px;
+    /* Espacio razonable debajo del header */
+    height: 90%;
+    /* Altura completa de la caja exterior */
+}
+
+.left-box {
+    flex: 1;
+    background-color: white;
+    /* Color de fondo para visualizar */
+    margin-right: 10px;
+    /* Espacio entre las cajas */
+    border: 2px solid white;
+    /* Borde blanco */
+    height: 100%;
+    /* Altura completa de la caja exterior */
+}
+
+.right-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Altura completa de la caja exterior */
+}
+
+.right-box-top,
+.right-box-bottom {
+    flex: 1;
+    background-color: white;
+    /* Color de fondo para visualizar */
+    margin-bottom: 10px;
+    /* Espacio entre las cajas horizontales */
+    border: 2px solid white;
+    /* Borde blanco */
+}
+
+.right-box-bottom {
+    margin-bottom: 0;
+    /* Eliminar margen inferior de la última caja */
 }
