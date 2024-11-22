@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const audio = new Audio('./src/audios/tecno1.mp3');
+    const audio = new Audio('./src/audios/chill.mp3');
     const button = document.querySelector('.nav-button');
 
     button.addEventListener('click', () => {
