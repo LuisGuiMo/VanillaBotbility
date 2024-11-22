@@ -1,13 +1,12 @@
-// let username;
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = new Audio('./src/audios/tecno1.mp3');
+    const button = document.querySelector('.nav-button');
 
-// document.getElementById("mySubmit").onclick = function () {
-//     username = document.getElementById("myText").value;
-
-//     if (username != "") {
-//         document.getElementById("myH1").textContent = "The warmest welcome to you, " + username + "!";
-//     } else {
-//         document.getElementById("myH1").textContent = "Write something you piece of shit!";
-//     }
-
-
-// }
+    button.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    });
+});

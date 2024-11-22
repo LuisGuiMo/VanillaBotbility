@@ -20,12 +20,17 @@ body {
 .head1 {
     overflow: hidden;
     border: 5px solid white;
+    border-radius: 1ch;
     /* Borde blanco para la barra de navegación */
     background-color: black;
     /* Añadir color de fondo negro */
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.head1 img {
+    height: 50px;
 }
 
 /* Style the links inside the navigation bar */
@@ -81,9 +86,12 @@ body {
     margin-right: 10px;
     /* Espacio entre las cajas */
     border: 2px solid white;
+    border-radius: 1ch;
     /* Borde blanco */
     height: 100%;
     /* Altura completa de la caja exterior */
+    min-height: 100px;
+    /* Altura mínima para evitar que se vean como líneas */
 }
 
 .right-box {
@@ -102,10 +110,60 @@ body {
     margin-bottom: 10px;
     /* Espacio entre las cajas horizontales */
     border: 2px solid white;
+    border-radius: 1ch;
     /* Borde blanco */
+    min-height: 100px;
+    /* Altura mínima para evitar que se vean como líneas */
 }
 
 .right-box-bottom {
     margin-bottom: 0;
     /* Eliminar margen inferior de la última caja */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 20px;
+        /* Aumentar padding a los lados en pantallas pequeñas */
+    }
+
+    .head1 {
+        justify-content: center;
+        /* Centrar contenido del header */
+    }
+
+    .head1 .nav-text,
+    .head1 .nav-button {
+        display: none;
+        /* Ocultar texto y botón en el header en pantallas pequeñas */
+    }
+
+    .content {
+        flex-direction: column;
+        /* Cambiar a columna en pantallas pequeñas */
+        height: auto;
+        /* Ajustar altura automáticamente */
+    }
+
+    .left-box,
+    .right-box {
+        margin-right: 0;
+        /* Eliminar margen derecho */
+        margin-bottom: 10px;
+        /* Añadir margen inferior */
+        height: auto;
+        /* Ajustar altura automáticamente */
+    }
+
+    .right-box-top,
+    .right-box-bottom {
+        margin-bottom: 10px;
+        /* Añadir margen inferior */
+    }
+
+    .right-box-bottom {
+        margin-bottom: 0;
+        /* Eliminar margen inferior de la última caja */
+    }
 }
