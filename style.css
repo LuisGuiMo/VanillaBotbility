@@ -19,7 +19,7 @@ body {
 
 .head1 {
     overflow: hidden;
-    border: 5px solid white;
+    border: 4px solid white;
     border-radius: 1ch;
     /* Borde blanco para la barra de navegación */
     background-color: black;
@@ -81,11 +81,11 @@ body {
 
 .left-box {
     flex: 1;
-    background-color: white;
-    /* Color de fondo para visualizar */
+    background-color: black;
+    /* Color de fondo negro */
     margin-right: 10px;
     /* Espacio entre las cajas */
-    border: 2px solid white;
+    border: 4px solid white;
     border-radius: 1ch;
     /* Borde blanco */
     height: 100%;
@@ -105,11 +105,11 @@ body {
 .right-box-top,
 .right-box-bottom {
     flex: 1;
-    background-color: white;
-    /* Color de fondo para visualizar */
+    background-color: black;
+    /* Color de fondo negro */
     margin-bottom: 10px;
     /* Espacio entre las cajas horizontales */
-    border: 2px solid white;
+    border: 4px solid white;
     border-radius: 1ch;
     /* Borde blanco */
     min-height: 100px;
