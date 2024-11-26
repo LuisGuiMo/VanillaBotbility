@@ -1,169 +1,85 @@
-/* Add a black background color to the top navigation */
-body {
-    background-color: black;
-    /* Fondo negro para toda la página */
-    margin: 0;
-    /* Eliminar márgenes por defecto */
-    padding: 0;
-    /* Eliminar padding por defecto */
-}
-
-.container {
-    padding: 20px 150px;
-    /* Padding global de la página */
+* {
     box-sizing: border-box;
-    /* Incluir padding en el tamaño total del contenedor */
-    height: calc(100vh - 100px);
-    /* Altura de la caja exterior */
-}
-
-.head1 {
-    overflow: hidden;
-    border: 4px solid white;
-    border-radius: 1ch;
-    /* Borde blanco para la barra de navegación */
-    background-color: black;
-    /* Añadir color de fondo negro */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.head1 img {
-    height: 50px;
-}
-
-/* Style the links inside the navigation bar */
-.head1 a,
-.head1 img,
-.head1 .nav-text,
-.head1 .nav-button {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 35px;
-    font-family: monospace;
-}
-
-.head1 .nav-text {
-    flex-grow: 1;
-    text-align: center;
-    color: white;
-    /* Color del texto central */
     margin: 0;
-    /* Eliminar márgenes */
+    padding: 0;
 }
 
-.head1 .nav-button {
-    float: right;
-    background: none;
-    border: none;
+body {
+    font-family: 'Helvetica', 'Bold', sans-serif;
+    background-color: black;
     color: white;
-    /* Color del icono del botón */
-    font-size: 50px;
-    cursor: pointer;
+    font-size: 1.2rem;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.head1 .nav-button:hover {
-    color: grey;
-    /* Cambiar color al pasar el ratón */
+.grid-container>* {
+    border: white solid 4px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
 }
 
-.content {
-    display: flex;
-    margin-top: 20px;
-    /* Espacio razonable debajo del header */
-    height: 90%;
-    /* Altura completa de la caja exterior */
+.grid-container {
+    display: grid;
+    gap: 20px;
+    grid-template:
+        "header" 200px
+        "navbar" 50px
+        "sidebar"
+        "main" 100px
+        "footer";
+
+    .header {
+        grid-area: header;
+        background-color: #333;
+
+    }
+
+    .navbar {
+        grid-area: navbar;
+        background-color: #333;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        background-color: #333;
+    }
+
+    .main {
+        grid-area: main;
+        background-color: #333;
+    }
+
+    .footer {
+        grid-area: footer;
+        background-color: #333;
+    }
+
+    @media(min-width:768px) {
+        grid-template:
+            "header navbar" 50px
+            "header navbar" 50px
+            "sidebar main" auto
+            "footer footer" 100px/
+            200px auto;
+
+    }
+
+    @media(min-width:992px) {
+        grid-template:
+            "header header header" 100px
+            "navbar main  sidebar" auto
+            "footer footer footer" 100px/
+            200px auto 200px;
+
+    }
+
+
+
 }
 
-.left-box {
-    flex: 1;
-    background-color: black;
-    /* Color de fondo negro */
-    margin-right: 10px;
-    /* Espacio entre las cajas */
-    border: 4px solid white;
-    border-radius: 1ch;
-    /* Borde blanco */
-    height: 100%;
-    /* Altura completa de la caja exterior */
-    min-height: 100px;
-    /* Altura mínima para evitar que se vean como líneas */
-}
-
-.right-box {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    /* Altura completa de la caja exterior */
-}
-
-.right-box-top,
-.right-box-bottom {
-    flex: 1;
-    background-color: black;
-    /* Color de fondo negro */
-    margin-bottom: 10px;
-    /* Espacio entre las cajas horizontales */
-    border: 4px solid white;
-    border-radius: 1ch;
-    /* Borde blanco */
-    min-height: 100px;
-    /* Altura mínima para evitar que se vean como líneas */
-}
-
-.right-box-bottom {
-    margin-bottom: 0;
-    /* Eliminar margen inferior de la última caja */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px 20px;
-        /* Aumentar padding a los lados en pantallas pequeñas */
-    }
-
-    .head1 {
-        justify-content: center;
-        /* Centrar contenido del header */
-    }
-
-    .head1 .nav-text,
-    .head1 .nav-button {
-        display: none;
-        /* Ocultar texto y botón en el header en pantallas pequeñas */
-    }
-
-    .content {
-        flex-direction: column;
-        /* Cambiar a columna en pantallas pequeñas */
-        height: auto;
-        /* Ajustar altura automáticamente */
-    }
-
-    .left-box,
-    .right-box {
-        margin-right: 0;
-        /* Eliminar margen derecho */
-        margin-bottom: 10px;
-        /* Añadir margen inferior */
-        height: auto;
-        /* Ajustar altura automáticamente */
-    }
-
-    .right-box-top,
-    .right-box-bottom {
-        margin-bottom: 10px;
-        /* Añadir margen inferior */
-    }
-
-    .right-box-bottom {
-        margin-bottom: 0;
-        /* Eliminar margen inferior de la última caja */
-    }
+scribe-shadow {
+    display: none !important;
 }
