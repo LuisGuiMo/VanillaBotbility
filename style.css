@@ -24,60 +24,61 @@ body {
 .grid-container {
     display: grid;
     gap: 20px;
-    grid-template:
-        "header" 200px
-        "navbar" 50px
+    grid-template-areas:
+        "header"
+        "navbar"
         "sidebar"
-        "main" 100px
+        "main"
         "footer";
+    grid-template-rows: 200px 50px auto 100px auto;
+}
 
-    .header {
-        grid-area: header;
-        background-color: #333;
+.header {
+    grid-area: header;
+    background-color: #333;
+}
 
+.navbar {
+    grid-area: navbar;
+    background-color: #333;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #333;
+}
+
+.main {
+    grid-area: main;
+    background-color: #333;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #333;
+}
+
+@media(min-width:768px) {
+    .grid-container {
+        grid-template-areas:
+            "header navbar"
+            "header navbar"
+            "sidebar main"
+            "footer footer";
+        grid-template-rows: 50px 50px auto 100px;
+        grid-template-columns: 200px auto;
     }
+}
 
-    .navbar {
-        grid-area: navbar;
-        background-color: #333;
+@media(min-width:992px) {
+    .grid-container {
+        grid-template-areas:
+            "header header header"
+            "navbar main sidebar"
+            "footer footer footer";
+        grid-template-rows: 100px auto 100px;
+        grid-template-columns: 200px auto 200px;
     }
-
-    .sidebar {
-        grid-area: sidebar;
-        background-color: #333;
-    }
-
-    .main {
-        grid-area: main;
-        background-color: #333;
-    }
-
-    .footer {
-        grid-area: footer;
-        background-color: #333;
-    }
-
-    @media(min-width:768px) {
-        grid-template:
-            "header navbar" 50px
-            "header navbar" 50px
-            "sidebar main" auto
-            "footer footer" 100px/
-            200px auto;
-
-    }
-
-    @media(min-width:992px) {
-        grid-template:
-            "header header header" 100px
-            "navbar main  sidebar" auto
-            "footer footer footer" 100px/
-            200px auto 200px;
-
-    }
-
-
-
 }
 
 scribe-shadow {
