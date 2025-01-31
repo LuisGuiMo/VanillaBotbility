@@ -1,0 +1,241 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #1a365d;
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: block;
+    width: 220px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Contenido principal */
+.hero {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #1a365d;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.lead {
+    color: #4a5568;
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+/* Tarjetas de características */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+    color: #1a365d;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Botones principales */
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 4rem auto;
+    max-width: 800px;
+}
+
+.whatsapp-button,
+.messenger-button {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button {
+    background: #25D366;
+    border: 2px solid #128C7E;
+}
+
+.messenger-button {
+    background: #006AFF;
+    border: 2px solid #0051cc;
+}
+
+.button-content {
+    text-align: left;
+    color: white;
+}
+
+.button-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: block;
+}
+
+.button-subtitle {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+.icon {
+    font-size: 2.2rem;
+    margin-right: 1.2rem;
+}
+
+/* Estadísticas */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    min-width: 150px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a365d;
+}
+
+.stat-label {
+    color: #4a5568;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #1a365d;
+    padding: 3rem 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-logo {
+    width: 180px;
+    opacity: 0.9;
+}
+
+.contact-info {
+    text-align: center;
+    color: white;
+}
+
+.email-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.email-link:hover {
+    opacity: 0.8;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .lead {
+        font-size: 1.2rem;
+    }
+
+    .button-container {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .stat-item {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Prevenir FOUC (Flash of Unstyled Content) */
+.feature-card,
+.whatsapp-button,
+.messenger-button,
+.stat-item {
+    opacity: 0;
+    visibility: hidden;
+}
